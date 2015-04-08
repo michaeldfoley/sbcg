@@ -1,0 +1,78 @@
+# ignore YeoPress configuration file since it contains password information
+.yeopress
+
+# As Yeoman assumes the usage of Bower and Grunt, ignore the below:
+bower_components
+node_modules
+
+# Ignore automatically generated cruft
+*.log
+.sass-cache
+
+# Ignore config
+local-config.php
+
+wp-config.php
+
+
+# Operating system files
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# Vagrant
+.vagrant
+
+# WordPress + popular plugin generated — adapted from:
+# https://github.com/github/gitignore/blob/master/WordPress.gitignore
+sitemap.xml
+sitemap.xml.gz
+content/advanced-cache.php
+content/backup-db/
+content/backups/
+content/blogs.dir/
+content/cache/
+content/uploads/
+content/upgrade/
+content/wp-cache-config.php
+# WordPress Core
+cms/db-config.php
+cms/index.php
+cms/license.txt
+cms/readme.html
+cms/wp-activate.php
+cms/wp-app.php
+cms/wp-atom.php
+cms/wp-blog-header.php
+cms/wp-comments-post.php
+cms/wp-commentsrss2.php
+cms/wp-config-sample.php
+cms/wp-cron.php
+cms/wp-feed.php
+cms/wp-links-opml.php
+cms/wp-load.php
+cms/wp-login.php
+cms/wp-mail.php
+cms/wp-rdf.php
+cms/wp-rss.php
+cms/wp-rss2.php
+cms/wp-pass.php
+cms/wp-register.php
+cms/wp-settings.php
+cms/wp-signup.php
+cms/wp-trackback.php
+cms/xmlrpc.php
+cms/wp-admin
+cms/wp-includes
+cms/wp-content/index.php
+cms/wp-content/plugins/hello.php
+cms/wp-content/plugins/index.php
+cms/wp-content/themes/index.php
+cms/wp-content/themes/twentyten
+cms/wp-content/themes/twentyeleven
+cms/wp-content/themes/twentytwelve
+cms/wp-content/themes/twentythirteen
+
