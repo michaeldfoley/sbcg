@@ -76,3 +76,5 @@ cms/wp-content/themes/twentyeleven
 cms/wp-content/themes/twentytwelve
 cms/wp-content/themes/twentythirteen
 
+# Ignore .sql files
+*.sql
