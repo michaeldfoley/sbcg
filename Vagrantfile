@@ -10,12 +10,13 @@ Vagrant.configure("2") do |config|
   # Apache
   config.vm.network :forwarded_port, guest: 80, host: 8089
   config.vm.network :forwarded_port, guest: 443, host: 4434
+  config.vm.network :private_network, ip: "192.168.33.10"
   # MySQL
   config.vm.network :forwarded_port, guest: 3306, host: 3308
 
   # Set Timezone
   config.vm.provision :shell,
-    :inline => "echo America/Chicago | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata"
+    :inline => "echo America/New_York | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata"
 
   # Provision Box
   config.vm.provision :puppet do |puppet|

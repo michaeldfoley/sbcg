@@ -20,16 +20,24 @@ include bootstrap
 class {
 	'apache':
 		mpm_module => 'prefork',
-		servername => 'localhost',
+		servername => '192.168.33.10',
 		require => Exec['apt-get update'];
 	'apache::mod::php':
 		require => Exec['apt-get update'];
 }
 apache::vhost { 
-	'localhost':
+	'192.168.33.10':
 		port    => '80',
 		docroot => '/home/vagrant/www',
+		directories => [
+    {
+      path => '/home/vagrant/www',
+      allow_override => [ 'All' ],
+      order => 'Allow,Deny',
+    }
+  ]
 }
+apache::mod { 'rewrite': }
 
 # PHP
 class {
@@ -54,6 +62,7 @@ mysql::db {
 		password => 'garden',
 		host     => 'localhost',
 		grant    => ['all'],
+		sql      => '../../db184003_Garden.sql',
 }
 
 # Git
