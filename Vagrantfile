@@ -1,31 +1,17 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+dir = File.dirname(File.expand_path(__FILE__))
 
-Vagrant.configure("2") do |config|
+require 'yaml'
+require "#{dir}/puphpet/ruby/deep_merge.rb"
 
-  # Box Config
-  config.vm.box = "precise32"
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+configValues = YAML.load_file("#{dir}/puphpet/config.yaml")
 
-  # Apache
-  config.vm.network :forwarded_port, guest: 80, host: 8089
-  config.vm.network :forwarded_port, guest: 443, host: 4434
-  config.vm.network :private_network, ip: "192.168.33.10"
-  # MySQL
-  config.vm.network :forwarded_port, guest: 3306, host: 3308
-
-  # Set Timezone
-  config.vm.provision :shell,
-    :inline => "echo America/New_York | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata"
-
-  # Provision Box
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file = "default.pp"
-	puppet.module_path = "puppet/modules"
-  end
-
-  # Synced Folder
-  config.vm.synced_folder ".", "/home/vagrant/www" , :mount_options => ["dmode=777","fmode=666"]
-
+if File.file?("#{dir}/puphpet/config-custom.yaml")
+  custom = YAML.load_file("#{dir}/puphpet/config-custom.yaml")
+  configValues.deep_merge!(custom)
 end
+
+data = configValues['vagrantfile']
+
+Vagrant.require_version '>= 1.6.0'
+
+eval File.read("#{dir}/puphpet/vagrant/Vagrantfile-#{data['target']}")
