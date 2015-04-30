@@ -25,6 +25,10 @@ Thumbs.db
 
 # Vagrant
 .vagrant
+/html
+
+# IDE Cruft
+.idea
 
 # WordPress + popular plugin generated — adapted from:
 # https://github.com/github/gitignore/blob/master/WordPress.gitignore
@@ -78,3 +82,6 @@ cms/wp-content/themes/twentythirteen
 
 # Ignore .sql files
 *.sql
+
+# Theme files are managed elsewhere
+/content/themes
