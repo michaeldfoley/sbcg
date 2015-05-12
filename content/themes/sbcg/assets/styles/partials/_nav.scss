@@ -1,0 +1,243 @@
+// Nav
+// --------------------------------------------------
+
+
+// general nav styles
+.nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-primary--list,
+.nav-footer--list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.nav-item {
+  flex-grow: 1;
+}
+
+
+// Primary nav styles
+.nav-primary--list {
+  align-items: center;
+  margin-bottom: 0;
+  
+  .nav-item {
+    text-align: center;
+    font-size: 5vw;
+    
+    @media (min-width: $screen-xxs) {
+      font-size: $font-size-base;
+    }
+  }
+  
+  a {
+    display: block;
+    padding: $padding-base-vertical  0;
+    margin: 0 $padding-base-horizontal/2;
+    
+    @media (min-width: $screen-xs) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    @media (min-width: $screen-sm) {
+      margin-left: $padding-base-horizontal;
+      margin-right: $padding-base-horizontal;
+    }
+  }
+}
+
+
+// Homepage nav styles
+.nav-primary--homepage {
+  padding-left: ($grid-column-gutter / 2);
+  padding-right: ($grid-column-gutter / 2);
+  background: $nav-bg;
+  color: $nav-color;
+  
+  a {
+    color: $nav-link-color;
+    
+    &:hover {
+      color: $nav-link-hover-color;
+    }
+  }
+  
+  .icon-bar {
+    background-color: #ffffff;
+  }
+  
+  @media (min-width: $screen-sm) {
+    .nav-item {
+      flex-grow: 0;
+    }
+  }
+  
+  @media (min-width: $screen-xs) {
+    font-weight: $font-weight-strong;
+    
+    .nav-primary--list {
+      justify-content: center;
+    }
+  }
+}
+
+
+// Inner nav styles
+.header--inner {
+  .nav-primary {
+    flex-grow: 1;
+    text-transform: uppercase;
+    
+    @media (min-width: $screen-sm) {
+      flex-grow: 0;
+      margin-right: $grid-column-gutter/2 - $padding-base-horizontal;
+    }
+  }
+  
+  @media (min-width: $screen-xs) {
+    //font-weight: $font-weight-strong;
+    
+    .nav-item {
+      flex-grow: 0;
+    }
+    
+    .nav-primary--list {
+      justify-content: space-around;
+    }
+  }
+  
+  .nav-item {
+    font-size: .85em;
+    letter-spacing: .05em;
+  }
+  
+  a {
+    padding-top: $padding-large-vertical - 9;
+    padding-bottom: $padding-large-vertical - 8;
+    
+    @media (min-width: $screen-xs) {
+      padding-top: $padding-large-vertical;
+      padding-bottom: $padding-large-vertical + 1;
+    }
+  }
+  
+  .active a {
+    font-weight: $font-weight-strong;
+    border-bottom: 2px solid $gray;
+    padding-bottom: $padding-large-vertical - 9;
+    
+    @media (min-width: $screen-xs) {
+      padding-bottom: $padding-large-vertical - 1;
+    }
+  }
+}
+
+
+// Footer nav styles
+.nav-footer--list {
+  
+  li {
+    font-weight: $font-weight-strong;
+  }
+  .sub-menu li {
+    font-weight: $font-weight-base;
+  }
+
+  a {
+    color: $footer-color-alt;
+  }
+  
+  .nav-item--top {
+    width: 50%;
+    margin-bottom: $line-height-computed / 2;
+  
+    @media (min-width: $screen-xs) {
+      width: auto;
+    }
+    
+    @media (min-width: $screen-sm) {
+      width: 50%;
+    }
+  
+    @media (min-width: $screen-md) {
+      width: auto;
+    }
+  }
+}
+
+
+// Toggle more nav items
+.nav-toggle {
+  position: relative;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  padding-left: 0;
+  outline: none;
+}
+@media (min-width: $screen-xs) {
+  .nav-toggle--container {
+    display: none;
+  }
+}
+
+
+// Hamburger button
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: $link-color;
+  border-radius: 1px;
+  transition: all .35s ease-out;
+  
+  + .icon-bar {
+    margin-top: 4px;
+  }
+}
+
+.collapse.in .icon-bar {
+  transform: rotate(-45deg) translate(-4px,4px);
+  
+  + .icon-bar:not(:last-child) {
+    background-color: transparent;
+  }
+  &:last-of-type {
+    transform: rotate(45deg) translate(-4px,-4px);
+  }
+}
+
+
+// Toggled
+.nav-primary {
+  transition: height .35s ease-out;
+  height: 48px;
+  overflow: hidden;
+}
+.nav-primary.in {
+  height: 96px;
+}
+
+.nav-primary.collapse .nav-item {
+  display: none;
+}
+
+.nav-primary.collapse.in .nav-item,
+.nav-primary.collapse .nav-sticky {
+  display: block;
+}
+
+@media (min-width: $screen-xs) {
+  .nav-primary,
+  .nav-primary.in {
+    height: auto;
+  }
+  .nav-primary.collapse .nav-item {
+    display: block;
+  }
+}
