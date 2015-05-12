@@ -184,6 +184,6 @@ module.exports = function(grunt) {
     grunt.renameTask('rsync', 'deploy');
 
     // register task
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify', 'svg_sprite', 'imagemin', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify', 'svg_sprite', 'imagemin', 'svg_sprite', 'browserSync', 'watch']);
 
 };
