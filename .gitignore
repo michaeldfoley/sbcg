@@ -83,4 +83,6 @@ cms/wp-content/themes/twentythirteen
 # Ignore .sql files
 *.sql
 
-# Theme files are managed elsewhere
+# Ignore plugins that aren't custom
+content/plugins
+!content/plugins/sbcg-*
