@@ -84,5 +84,5 @@ cms/wp-content/themes/twentythirteen
 *.sql
 
 # Ignore plugins that aren't custom
-content/plugins
-!content/plugins/sbcg-*
+content/plugins/*
+!content/plugins/sbcg-*/
