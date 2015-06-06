@@ -30,7 +30,9 @@ module.exports = function(grunt) {
                   'local-config.php', 
                   'puphpet', 
                   'Vagrantfile',
-                  'html'
+                  'html',
+                  'themes/yeopress',
+                  'themes/twenty*'
                 ],
                 recursive: true,
                 syncDestIgnoreExcl: true,
