@@ -88,3 +88,6 @@ content/plugins/*
 !content/plugins/sbcg-*/
 content/mu-plugins/*
 !content/mu-plugins/sbcg-*/
+
+# Ignore W3TC config
+content/w3tc-config
