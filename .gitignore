@@ -86,3 +86,5 @@ cms/wp-content/themes/twentythirteen
 # Ignore plugins that aren't custom
 content/plugins/*
 !content/plugins/sbcg-*/
+content/mu-plugins/*
+!content/mu-plugins/sbcg-*/
