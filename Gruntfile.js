@@ -27,27 +27,31 @@ module.exports = function(grunt) {
                   '.vagrant', 
                   '.yeopress', 
                   '*.sql', 
+                  'stage-config.php',
                   'local-config.php', 
                   'puphpet', 
                   'Vagrantfile',
                   'html',
                   'themes/yeopress',
-                  'themes/twenty*'
+                  'themes/twenty*',
+                  'plugins'
                 ],
                 recursive: true,
-                syncDestIgnoreExcl: true,
+                syncDestIgnoreExcl: false,
                 ssh: true
             },
             staging: {
                  options: {
-                    dest: "~/domains/stage.southbrooklynchildrensgarden.org/html",
-                    host: "sbcg"
+                    include: ['stage-config.php', 'plugins/sbcg-*'],
+                    dest: '~/domains/stage.southbrooklynchildrensgarden.org/html',
+                    host: 'sbcg'
                 }
             },
             production: {
                 options: {
-                    dest: "~/path/to/theme",
-                    host: "user@host.com"
+                    include: ['plugins/sbcg-*'],
+                    dest: '~/domains/southbrooklynchildrensgarden.org/html',
+                    host: 'sbcg'
                 }
             }
         }
