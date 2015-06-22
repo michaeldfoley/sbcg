@@ -56,8 +56,20 @@ module.exports = function(grunt) {
                     host: 'sbcg'
                 }
             }
+        },
+        imagemin: {
+          dist: {
+            options: {
+              progressive: true
+            },
+            files: [{
+              expand: true,
+              cwd: 'content/uploads',
+              src: '**/*.{jpg,jpeg,png}',
+              dest: 'content/uploads'
+            }]
+          }
         }
-
     });
 
     // rename tasks
