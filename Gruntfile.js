@@ -34,7 +34,9 @@ module.exports = function(grunt) {
                   'html',
                   'themes/yeopress',
                   'themes/twenty*',
-                  'plugins'
+                  'plugins',
+                  'mu-plugins',
+                  'w3tc-config'
                 ],
                 recursive: true,
                 syncDestIgnoreExcl: false,
@@ -42,14 +44,14 @@ module.exports = function(grunt) {
             },
             staging: {
                  options: {
-                    include: ['stage-config.php', 'plugins/sbcg-*'],
+                    include: ['stage-config.php', 'plugins/sbcg-*', 'mu-plugins/sbcg-*'],
                     dest: '~/domains/stage.southbrooklynchildrensgarden.org/html',
                     host: 'sbcg'
                 }
             },
             production: {
                 options: {
-                    include: ['plugins/sbcg-*'],
+                    include: ['plugins/sbcg-*', 'mu-plugins/sbcg-*'],
                     dest: '~/domains/southbrooklynchildrensgarden.org/html',
                     host: 'sbcg'
                 }
