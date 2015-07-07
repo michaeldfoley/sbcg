@@ -145,10 +145,32 @@ apache:
             setenv:
                 - 'APP_ENV dev'
             custom_fragment: ''
-            ssl_cert: ''
-            ssl_key: ''
-            ssl_chain: ''
-            ssl_certs_dir: ''
+            ssl: '0'
+            directories:
+                avd_05ki33q27ln2:
+                    path: /var/www
+                    options:
+                        - Indexes
+                        - FollowSymlinks
+                        - MultiViews
+                    allow_override:
+                        - All
+                    require:
+                        - 'all granted'
+                    custom_fragment: ''
+                    files_match:
+                        avdfm_w5z685r1nqjz:
+                            path: \.php$
+                            sethandler: 'proxy:fcgi://127.0.0.1:9000'
+                            custom_fragment: ''
+                            provider: filesmatch
+                    provider: directory
+        av_0w0g7nhbiuse:
+            servername: sbcg.dev
+            docroot: /var/www
+            port: '443'
+            custom_fragment: ''
+            ssl: '1'
             directories:
                 avd_05ki33q27ln2:
                     path: /var/www
