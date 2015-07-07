@@ -268,7 +268,7 @@ mysql:
     databases:
         mysqlnd_4iyuczoso0hu:
             name: garden
-            sql: /var/www/garden_new.sql
+            sql: /var/www/garden.sql
     grants:
         mysqlng_rrs9n7n9aode:
             user: garden
