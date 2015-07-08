@@ -36,7 +36,11 @@ module.exports = function(grunt) {
                   'themes/twenty*',
                   'plugins',
                   'mu-plugins',
-                  'w3tc-config'
+                  'w3tc-config',
+                  'uploads',
+                  'advanced-cache.php',
+                  'cache',
+                  'upgrade'
                 ],
                 recursive: true,
                 syncDestIgnoreExcl: false,
