@@ -48,22 +48,22 @@ module.exports = function(grunt) {
             },
             staging: {
                  options: {
-                    include: ['stage-config.php', 'plugins/sbcg-*', 'mu-plugins/sbcg-*'],
-                    dest: '~/domains/stage.southbrooklynchildrensgarden.org/html',
+                    include: ['stage-config.php', 'plugins/sbcg-*', 'mu-plugins/sbcg-*', 'themes/sbcg/plugins/*'],
+                    dest: '~/applications/kudtkzkagy/public_html',
                     host: 'sbcg'
                 }
             },
             production: {
                 options: {
-                    include: ['plugins/sbcg-*', 'mu-plugins/sbcg-*'],
-                    dest: '~/domains/southbrooklynchildrensgarden.org/html',
+                    include: ['plugins/sbcg-*', 'mu-plugins/sbcg-*', 'themes/sbcg/plugins/*'],
+                    dest: '~/applications/uygaksavnu/public_html',
                     host: 'sbcg'
                 }
             },
             test: {
                 options: {
-                    include: ['stage-config.php', 'plugins/sbcg-*', 'mu-plugins/sbcg-*'],
-                    dest: '~/domains/stage.southbrooklynchildrensgarden.org/html',
+                    include: ['stage-config.php', 'plugins/sbcg-*', 'mu-plugins/sbcg-*', 'themes/sbcg/plugins/*'],
+                    dest: '~/applications/kudtkzkagy/public_html',
                     host: 'sbcg',
                     dryRun: true
                 }
