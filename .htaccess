@@ -8,7 +8,6 @@
 <IfModule mod_rewrite.c>
    RewriteEngine On
    RewriteCond %{HTTP:X-Forwarded-Proto} !https
-   RewriteCond %{HTTP_HOST} !^test\. [NC]
    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
