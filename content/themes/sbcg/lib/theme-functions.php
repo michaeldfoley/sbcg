@@ -79,6 +79,11 @@ function mb_imagelink_setup() {
 }
 
 /**
+ * Stop auto update attempts
+ */
+define( 'WP_AUTO_UPDATE_CORE', false );
+
+/**
  * Stop core update emails
  */
 add_filter( 'auto_core_update_send_email', '__return_false' );
