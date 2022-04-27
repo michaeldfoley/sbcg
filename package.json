@@ -4,7 +4,7 @@
   "description": "Wordpress website for the South Brooklyn Children's Garden",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "^1.1.0",
+    "grunt": "^1.5.2",
     "grunt-contrib-imagemin": "^4.0.0",
     "grunt-rsync": "^3.0.0",
     "load-grunt-tasks": "^5.1.0"
